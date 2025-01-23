@@ -1,0 +1,14 @@
+[
+    {
+        "name": "report name, will be displayed on the report card",
+        "link": "somelink1"
+    },
+    {
+        "name": "report name, will be displayed on the report card",
+        "link": "somelink2"
+    },
+    {
+        "name": "report name, will be displayed on the report card",
+        "link": "somelink3"
+    }
+]
