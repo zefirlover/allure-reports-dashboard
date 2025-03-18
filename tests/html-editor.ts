@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
 export class HtmlEditor {
-    async generateDashboardCard(apiName: string, reportUrl: string, percentage: string | null, percentCircle: string | null, testCount: string | null, isOutdated: boolean): Promise<string> {
+    async generateDashboardCard(apiName: string, reportUrl: string, percentage: string | null, percentCircle: string | null, testCount: string | null, isOutdated: boolean, date: string | null): Promise<string> {
         let testsClass = "dashboard-green";
         if (isOutdated) {
             testsClass = "dashboard-red";
@@ -9,6 +9,7 @@ export class HtmlEditor {
         return `
             <div class="dashboard-card ${testsClass}">
                 <div class="dashboard-header">${apiName.toUpperCase()}</div>
+                <div class="dashboard-text">${date}</div>
                 <div class="dashboard-content">
                     <div class="chart" style="--percentage: ${percentage}">
                         <img src="${percentCircle}" alt="${percentage}" class="percentage-circle"></img>
@@ -60,6 +61,9 @@ export class HtmlEditor {
                     }
                     .dashboard-header {
                         font-weight: bold;
+                        margin: 0 10px 10px 10px;
+                    }
+                    .dashboard-text {
                         margin: 0 10px 10px 10px;
                     }
                     .dashboard-content {
